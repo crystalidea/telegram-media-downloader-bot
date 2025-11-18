@@ -1,0 +1,16 @@
+*.user
+*sdf
+*.suo
+ipch
+*.aps
+*.ilk
+*.iobj
+*.ipdb
+*.pdb
+*VC.db
+Debug/
+Release/
+.vs
+logs
+*.exe
+build

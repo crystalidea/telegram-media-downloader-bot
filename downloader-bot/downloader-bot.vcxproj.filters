@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>qml;cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Source Files\spdlog">
+      <UniqueIdentifier>{c4ee5300-1d0e-46c8-954e-8c088a05f679}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bot.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pch.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="video_info.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="video_info_parser.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="stream_info.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="helpers.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="3rdParty\spdlog\src\async.cpp">
+      <Filter>Source Files\spdlog</Filter>
+    </ClCompile>
+    <ClCompile Include="3rdParty\spdlog\src\bundled_fmtlib_format.cpp">
+      <Filter>Source Files\spdlog</Filter>
+    </ClCompile>
+    <ClCompile Include="3rdParty\spdlog\src\cfg.cpp">
+      <Filter>Source Files\spdlog</Filter>
+    </ClCompile>
+    <ClCompile Include="3rdParty\spdlog\src\color_sinks.cpp">
+      <Filter>Source Files\spdlog</Filter>
+    </ClCompile>
+    <ClCompile Include="3rdParty\spdlog\src\file_sinks.cpp">
+      <Filter>Source Files\spdlog</Filter>
+    </ClCompile>
+    <ClCompile Include="3rdParty\spdlog\src\spdlog.cpp">
+      <Filter>Source Files\spdlog</Filter>
+    </ClCompile>
+    <ClCompile Include="3rdParty\spdlog\src\stdout_sinks.cpp">
+      <Filter>Source Files\spdlog</Filter>
+    </ClCompile>
+    <ClCompile Include="video_downloader.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="gallery_downloader.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bot_status.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bot_config.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bot_logger.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="pch.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="download_info.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="video_info.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="video_info_parser.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stream_info.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="helpers.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="video_downloader.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="gallery_downloader.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="bot_status.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="bot_config.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="bot_logger.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="bot.h">
+      <Filter>Source Files</Filter>
+    </QtMoc>
+  </ItemGroup>
+</Project>

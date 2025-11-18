@@ -1,0 +1,1 @@
+docker volume create --driver local --opt type=cifs --opt device=//DS/docker/bot_shared --opt o=user=guest,uid=1030,gid=100 build\bot_shared

@@ -1,0 +1,336 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+***************************************************************************************************
+ Copyright (C) 2023 The Qt Company Ltd.
+ SPDX-License-Identifier: LicenseRef-Qt-Commercial OR LGPL-3.0-only OR GPL-2.0-only OR GPL-3.0-only
+***************************************************************************************************
+-->
+<Project DefaultTargets="Build" ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Bot.cpp" />
+    <ClCompile Include="BotSettings.cpp" />
+    <ClCompile Include="Internal\TelegramListener.cpp" />
+    <ClCompile Include="Internal\Utility\QHttpMultiPartInserter.cpp" />
+    <ClCompile Include="Internal\Utility\QJsonArrayInserter.cpp" />
+    <ClCompile Include="Internal\Utility\QJsonObjectInserter.cpp" />
+    <ClCompile Include="Internal\Utility\Utility.cpp" />
+    <ClCompile Include="Types\Animation.cpp" />
+    <ClCompile Include="Types\Audio.cpp" />
+    <ClCompile Include="Types\BotCommand.cpp" />
+    <ClCompile Include="Types\BotCommandScopeChat.cpp" />
+    <ClCompile Include="Types\BotCommandScopeChatAdministrators.cpp" />
+    <ClCompile Include="Types\BotCommandScopeChatMember.cpp" />
+    <ClCompile Include="Types\CallbackQuery.cpp" />
+    <ClCompile Include="Types\Chat.cpp" />
+    <ClCompile Include="Types\ChatInviteLink.cpp" />
+    <ClCompile Include="Types\ChatLocation.cpp" />
+    <ClCompile Include="Types\ChatMember.cpp" />
+    <ClCompile Include="Types\ChatMemberAdministrator.cpp" />
+    <ClCompile Include="Types\ChatMemberBanned.cpp" />
+    <ClCompile Include="Types\ChatMemberLeft.cpp" />
+    <ClCompile Include="Types\ChatMemberMember.cpp" />
+    <ClCompile Include="Types\ChatMemberOwner.cpp" />
+    <ClCompile Include="Types\ChatMemberRestricted.cpp" />
+    <ClCompile Include="Types\ChatMemberUpdated.cpp" />
+    <ClCompile Include="Types\ChatPermissions.cpp" />
+    <ClCompile Include="Types\ChatPhoto.cpp" />
+    <ClCompile Include="Types\ChosenInlineResult.cpp" />
+    <ClCompile Include="Types\Contact.cpp" />
+    <ClCompile Include="Types\Dice.cpp" />
+    <ClCompile Include="Types\Document.cpp" />
+    <ClCompile Include="Types\Error.cpp" />
+    <ClCompile Include="Types\File.cpp" />
+    <ClCompile Include="Types\ForceReply.cpp" />
+    <ClCompile Include="Types\InlineKeyboardButton.cpp" />
+    <ClCompile Include="Types\InlineKeyboardMarkup.cpp" />
+    <ClCompile Include="Types\InlineQuery.cpp" />
+    <ClCompile Include="Types\InlineQueryResult.cpp" />
+    <ClCompile Include="Types\InlineQueryResultArticle.cpp" />
+    <ClCompile Include="Types\InlineQueryResultAudio.cpp" />
+    <ClCompile Include="Types\InlineQueryResultCachedAudio.cpp" />
+    <ClCompile Include="Types\InlineQueryResultCachedDocument.cpp" />
+    <ClCompile Include="Types\InlineQueryResultCachedGif.cpp" />
+    <ClCompile Include="Types\InlineQueryResultCachedMpeg4Gif.cpp" />
+    <ClCompile Include="Types\InlineQueryResultCachedPhoto.cpp" />
+    <ClCompile Include="Types\InlineQueryResultCachedSticker.cpp" />
+    <ClCompile Include="Types\InlineQueryResultCachedVideo.cpp" />
+    <ClCompile Include="Types\InlineQueryResultCachedVoice.cpp" />
+    <ClCompile Include="Types\InlineQueryResultContact.cpp" />
+    <ClCompile Include="Types\InlineQueryResultDocument.cpp" />
+    <ClCompile Include="Types\InlineQueryResultGame.cpp" />
+    <ClCompile Include="Types\InlineQueryResultGif.cpp" />
+    <ClCompile Include="Types\InlineQueryResultLocation.cpp" />
+    <ClCompile Include="Types\InlineQueryResultMpeg4Gif.cpp" />
+    <ClCompile Include="Types\InlineQueryResultPhoto.cpp" />
+    <ClCompile Include="Types\InlineQueryResultVenue.cpp" />
+    <ClCompile Include="Types\InlineQueryResultVideo.cpp" />
+    <ClCompile Include="Types\InlineQueryResultVoice.cpp" />
+    <ClCompile Include="Types\InputContactMessageContent.cpp" />
+    <ClCompile Include="Types\InputInvoiceMessageContent.cpp" />
+    <ClCompile Include="Types\InputLocationMessageContent.cpp" />
+    <ClCompile Include="Types\InputMedia.cpp" />
+    <ClCompile Include="Types\InputMediaAnimation.cpp" />
+    <ClCompile Include="Types\InputMediaAudio.cpp" />
+    <ClCompile Include="Types\InputMediaDocument.cpp" />
+    <ClCompile Include="Types\InputMediaPhoto.cpp" />
+    <ClCompile Include="Types\InputMediaVideo.cpp" />
+    <ClCompile Include="Types\InputMessageContent.cpp" />
+    <ClCompile Include="Types\InputTextMessageContent.cpp" />
+    <ClCompile Include="Types\InputVenueMessageContent.cpp" />
+    <ClCompile Include="Types\KeyboardButton.cpp" />
+    <ClCompile Include="Types\KeyboardButtonPollType.cpp" />
+    <ClCompile Include="Types\Location.cpp" />
+    <ClCompile Include="Types\LoginURL.cpp" />
+    <ClCompile Include="Types\MaskPosition.cpp" />
+    <ClCompile Include="Types\Message.cpp" />
+    <ClCompile Include="Types\MessageAutoDeleteTimerChanged.cpp" />
+    <ClCompile Include="Types\MessageEntity.cpp" />
+    <ClCompile Include="Types\MessageId.cpp" />
+    <ClCompile Include="Types\PhotoSize.cpp" />
+    <ClCompile Include="Types\Poll.cpp" />
+    <ClCompile Include="Types\PollAnswer.cpp" />
+    <ClCompile Include="Types\PollOption.cpp" />
+    <ClCompile Include="Types\ProximityAlertTriggered.cpp" />
+    <ClCompile Include="Types\ReplyKeyboardMarkup.cpp" />
+    <ClCompile Include="Types\ReplyKeyboardRemove.cpp" />
+    <ClCompile Include="Types\ResponseParameters.cpp" />
+    <ClCompile Include="Types\Sticker.cpp" />
+    <ClCompile Include="Types\StickerSet.cpp" />
+    <ClCompile Include="Types\Update.cpp" />
+    <ClCompile Include="Types\User.cpp" />
+    <ClCompile Include="Types\UserProfilePhotos.cpp" />
+    <ClCompile Include="Types\Venue.cpp" />
+    <ClCompile Include="Types\Video.cpp" />
+    <ClCompile Include="Types\VideoNote.cpp" />
+    <ClCompile Include="Types\Voice.cpp" />
+    <ClCompile Include="Types\VoiceChatEnded.cpp" />
+    <ClCompile Include="Types\VoiceChatParticipantsInvited.cpp" />
+    <ClCompile Include="Types\VoiceChatScheduled.cpp" />
+    <ClCompile Include="Types\VoiceChatStarted.cpp" />
+    <ClCompile Include="Types\WebhookInfo.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="Internal\TelegramListener.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="BotSettings.h" />
+    <ClInclude Include="FunctionArguments.h" />
+    <ClInclude Include="TelegramBotAPI.h" />
+    <QtMoc Include="Bot.h" />
+    <ClInclude Include="Internal\Utility\QHttpMultiPartInserter.h" />
+    <ClInclude Include="Internal\Utility\QHttpMultiPartInserter.hpp" />
+    <ClInclude Include="Internal\Utility\QJsonArrayInserter.h" />
+    <ClInclude Include="Internal\Utility\QJsonArrayInserter.hpp" />
+    <ClInclude Include="Internal\Utility\QJsonObjectInserter.h" />
+    <ClInclude Include="Internal\Utility\QJsonObjectInserter.hpp" />
+    <ClInclude Include="Internal\Utility\QVectorInserter.h" />
+    <ClInclude Include="Internal\Utility\QVectorInserter.hpp" />
+    <ClInclude Include="Internal\Utility\Utility.h" />
+    <ClInclude Include="Types\Animation.h" />
+    <ClInclude Include="Types\Audio.h" />
+    <ClInclude Include="Types\BotCommand.h" />
+    <ClInclude Include="Types\BotCommandScopeAllChatAdministrators.h" />
+    <ClInclude Include="Types\BotCommandScopeAllGroupChats.h" />
+    <ClInclude Include="Types\BotCommandScopeAllPrivateChats.h" />
+    <ClInclude Include="Types\BotCommandScopeChat.h" />
+    <ClInclude Include="Types\BotCommandScopeChatAdministrators.h" />
+    <ClInclude Include="Types\BotCommandScopeChatMember.h" />
+    <ClInclude Include="Types\BotCommandScopeDefault.h" />
+    <ClInclude Include="Types\CallbackQuery.h" />
+    <ClInclude Include="Types\ChatInviteLink.h" />
+    <ClInclude Include="Types\ChatLocation.h" />
+    <ClInclude Include="Types\ChatMemberAdministrator.h" />
+    <ClInclude Include="Types\ChatMemberBanned.h" />
+    <ClInclude Include="Types\ChatMemberLeft.h" />
+    <ClInclude Include="Types\ChatMemberMember.h" />
+    <ClInclude Include="Types\ChatMemberOwner.h" />
+    <ClInclude Include="Types\ChatMemberRestricted.h" />
+    <ClInclude Include="Types\ChatMemberUpdated.h" />
+    <ClInclude Include="Types\ChatPermissions.h" />
+    <ClInclude Include="Types\ChatPhoto.h" />
+    <ClInclude Include="Types\ChosenInlineResult.h" />
+    <ClInclude Include="Types\Contact.h" />
+    <ClInclude Include="Types\Dice.h" />
+    <ClInclude Include="Types\Document.h" />
+    <ClInclude Include="Types\Error.h" />
+    <ClInclude Include="Types\File.h" />
+    <ClInclude Include="Types\ForceReply.h" />
+    <ClInclude Include="Types\InlineKeyboardButton.h" />
+    <ClInclude Include="Types\InlineKeyboardMarkup.h" />
+    <ClInclude Include="Types\InlineQueryResultArticle.h" />
+    <ClInclude Include="Types\InlineQueryResultAudio.h" />
+    <ClInclude Include="Types\InlineQueryResultCachedAudio.h" />
+    <ClInclude Include="Types\InlineQueryResultCachedDocument.h" />
+    <ClInclude Include="Types\InlineQueryResultCachedGif.h" />
+    <ClInclude Include="Types\InlineQueryResultCachedMpeg4Gif.h" />
+    <ClInclude Include="Types\InlineQueryResultCachedPhoto.h" />
+    <ClInclude Include="Types\InlineQueryResultCachedSticker.h" />
+    <ClInclude Include="Types\InlineQueryResultCachedVideo.h" />
+    <ClInclude Include="Types\InlineQueryResultCachedVoice.h" />
+    <ClInclude Include="Types\InlineQueryResultContact.h" />
+    <ClInclude Include="Types\InlineQueryResultDocument.h" />
+    <ClInclude Include="Types\InlineQueryResultGame.h" />
+    <ClInclude Include="Types\InlineQueryResultGif.h" />
+    <ClInclude Include="Types\InlineQueryResultLocation.h" />
+    <ClInclude Include="Types\InlineQueryResultMpeg4Gif.h" />
+    <ClInclude Include="Types\InlineQueryResultPhoto.h" />
+    <ClInclude Include="Types\InlineQueryResultVenue.h" />
+    <ClInclude Include="Types\InlineQueryResultVideo.h" />
+    <ClInclude Include="Types\InlineQueryResultVoice.h" />
+    <ClInclude Include="Types\InputContactMessageContent.h" />
+    <ClInclude Include="Types\InputInvoiceMessageContent.h" />
+    <ClInclude Include="Types\InputLocationMessageContent.h" />
+    <ClInclude Include="Types\InputMediaAnimation.h" />
+    <ClInclude Include="Types\InputMediaAudio.h" />
+    <ClInclude Include="Types\InputMediaDocument.h" />
+    <ClInclude Include="Types\InputMediaPhoto.h" />
+    <ClInclude Include="Types\InputMediaVideo.h" />
+    <ClInclude Include="Types\InputMessageContent.h" />
+    <ClInclude Include="Types\InputTextMessageContent.h" />
+    <ClInclude Include="Types\InputVenueMessageContent.h" />
+    <ClInclude Include="Types\KeyboardButton.h" />
+    <ClInclude Include="Types\KeyboardButtonPollType.h" />
+    <ClInclude Include="Types\Location.h" />
+    <ClInclude Include="Types\LoginURL.h" />
+    <ClInclude Include="Types\MessageAutoDeleteTimerChanged.h" />
+    <ClInclude Include="Types\MessageId.h" />
+    <ClInclude Include="Types\PhotoSize.h" />
+    <ClInclude Include="Types\PollAnswer.h" />
+    <ClInclude Include="Types\PollOption.h" />
+    <ClInclude Include="Types\ProximityAlertTriggered.h" />
+    <ClInclude Include="Types\ReplyKeyboardMarkup.h" />
+    <ClInclude Include="Types\ReplyKeyboardRemove.h" />
+    <ClInclude Include="Types\ResponseParameters.h" />
+    <ClInclude Include="Types\Sticker.h" />
+    <ClInclude Include="Types\StickerSet.h" />
+    <ClInclude Include="Types\Update.h" />
+    <ClInclude Include="Types\User.h" />
+    <ClInclude Include="Types\UserProfilePhotos.h" />
+    <ClInclude Include="Types\Venue.h" />
+    <ClInclude Include="Types\Video.h" />
+    <ClInclude Include="Types\VideoNote.h" />
+    <ClInclude Include="Types\Voice.h" />
+    <ClInclude Include="Types\VoiceChatEnded.h" />
+    <ClInclude Include="Types\VoiceChatParticipantsInvited.h" />
+    <ClInclude Include="Types\VoiceChatScheduled.h" />
+    <ClInclude Include="Types\VoiceChatStarted.h" />
+    <ClInclude Include="Types\WebhookInfo.h" />
+    <QtMoc Include="Types\Poll.h" />
+    <QtMoc Include="Types\MessageEntity.h" />
+    <QtMoc Include="Types\Message.h" />
+    <QtMoc Include="Types\MaskPosition.h" />
+    <QtMoc Include="Types\InputMedia.h" />
+    <QtMoc Include="Types\InlineQueryResult.h" />
+    <QtMoc Include="Types\InlineQuery.h" />
+    <QtMoc Include="Types\ChatMember.h" />
+    <QtMoc Include="Types\Chat.h" />
+    <QtMoc Include="Types\BotCommandScope.h" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{AD268120-3145-4F06-9B66-5A094349BBBC}</ProjectGuid>
+    <Keyword>QtVS_v304</Keyword>
+    <WindowsTargetPlatformVersion Condition="'$(Configuration)|$(Platform)' == 'Debug|Win32'">10.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion Condition="'$(Configuration)|$(Platform)' == 'Release|Win32'">10.0</WindowsTargetPlatformVersion>
+    <QtMsBuild Condition="'$(QtMsBuild)'=='' OR !Exists('$(QtMsBuild)\qt.targets')">$(MSBuildProjectDirectory)\QtMsBuild</QtMsBuild>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Condition="Exists('$(QtMsBuild)\qt_defaults.props')">
+    <Import Project="$(QtMsBuild)\qt_defaults.props" />
+  </ImportGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|Win32'" Label="QtSettings">
+    <QtInstall>qt6</QtInstall>
+    <QtModules>core;network</QtModules>
+    <QtBuildConfig>debug</QtBuildConfig>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|Win32'" Label="QtSettings">
+    <QtInstall>qt6</QtInstall>
+    <QtModules>core;network</QtModules>
+    <QtBuildConfig>release</QtBuildConfig>
+  </PropertyGroup>
+  <Target Name="QtMsBuildNotFound" BeforeTargets="CustomBuild;ClCompile" Condition="!Exists('$(QtMsBuild)\qt.targets') or !Exists('$(QtMsBuild)\qt.props')">
+    <Message Importance="High" Text="QtMsBuild: could not locate qt.targets, qt.props; project may not build correctly." />
+  </Target>
+  <ImportGroup Label="ExtensionSettings" />
+  <ImportGroup Label="Shared" />
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)' == 'Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(QtMsBuild)\Qt.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)' == 'Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(QtMsBuild)\Qt.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|Win32'">
+    <OutDir>$(ProjectDir)$(Configuration)\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|Win32'">
+    <OutDir>$(ProjectDir)$(Configuration)\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Label="Vcpkg">
+    <VcpkgEnabled>false</VcpkgEnabled>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <AdditionalIncludeDirectories>$(ProjectDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <AdditionalIncludeDirectories>$(ProjectDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|Win32'" Label="Configuration">
+    <ClCompile>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <Optimization>Disabled</Optimization>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)' == 'Release|Win32'" Label="Configuration">
+    <ClCompile>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <DebugInformationFormat>None</DebugInformationFormat>
+      <Optimization>MaxSpeed</Optimization>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">
+    <Import Project="$(QtMsBuild)\qt.targets" />
+  </ImportGroup>
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
