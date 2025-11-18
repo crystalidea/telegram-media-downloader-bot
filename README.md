@@ -9,9 +9,9 @@ The bot is supposed to be run in Docker (see docker/Dockerfile). Before starting
 - **token.txt** file with your Telegram bot token code
 - **www.instagram.com_cookies.txt** file (optional) to download instagram posts, you should login to your instagram account using a web browser (Chrome) and get this file using the [Get cookes.txt LOCALLY](https://chromewebstore.google.com/detail/get-cookiestxt-locally/cclelndahbckbenkjhflpdbgdldlbecc) Chrome extension.
 
-and mount it to **/home/apprunner/bot_shared** folder in the container (docker/synology and docker/windows folder have some sample instruction how to do it in these environments).
+and mount it to **/home/apprunner/bot_shared** folder in the container with both read&write access (docker/synology and docker/windows folder have some sample instruction how to do it in these environments).
 
-The bot also writes **stats.csv** to the bot_shared folder.
+The bot stores log files in bot_shared/logs (for example, logs/2025-11-18.txt) and writes stats.csv to the root directory of bot_shared.
 
 # Developer Notes
 
