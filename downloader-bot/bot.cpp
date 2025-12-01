@@ -209,7 +209,7 @@ void QTelegramDownloaderBot::download_thread(const QString &url, qint64 chat_id,
 
                     if (fileSize > maxTelegramBotFileSizeBytes)
                     {
-                        sendMessage(chat_id, fmt::format("The file is over 50MB ({}). Re-encoding to fit the limit...", fileSizeFormatted));
+                        auto msgReencode = sendMessage(chat_id, fmt::format("The file is over 50MB ({}). Re-encoding to fit the limit...", fileSizeFormatted));
 
                         getLogger()->warn("File is over 50MB ({}). Attempting to transcode.", fileSizeFormatted);
 
@@ -222,6 +222,8 @@ void QTelegramDownloaderBot::download_thread(const QString &url, qint64 chat_id,
                             fileSizeFormatted = Helpers::formatSize(fileSize);
 
                             getLogger()->info("Compressed file size: {}", fileSizeFormatted);
+
+                            deleteMessage(chat_id, msgReencode.get().message_id);
                         }
                         else
                         {
