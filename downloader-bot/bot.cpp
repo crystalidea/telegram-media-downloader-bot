@@ -53,8 +53,11 @@ static const qint64 maxTelegramBotFileSizeBytes = 50 * 1024 * 1024; // 50 MB
 
 void QTelegramDownloaderBot::setAvailableCommands()
 {
-    //	List of bot commands 
-    QVector<BotCommand> bot_commands = { {"status", "View bot status"} };
+    //  List of bot commands 
+    QVector<BotCommand> bot_commands = {
+        {"status", "View bot status"},
+        {"log", "Send log file"}
+    };
 
     _bot->setMyCommands(bot_commands);
 }
@@ -316,6 +319,15 @@ void QTelegramDownloaderBot::pollingThread()
                     {
                         if (sendChatMessage)
                             sendMessage(chat_id, getStartText());
+                    }
+                    else if (text == "/log")
+                    {
+                        getLogger()->info("Sending log file");
+
+                        if (!sendLogFile(chat_id) && sendChatMessage)
+                        {
+                            sendMessage(chat_id, "Failed to send the log file");
+                        }
                     }
                     else if (validURL)
                     {
@@ -672,4 +684,44 @@ bool QTelegramDownloaderBot::sendGallery(const qint64& chat_id, const QList< Gal
     }
 
     return bSuccess;
+}
+
+bool QTelegramDownloaderBot::sendLogFile(const qint64& chat_id)
+{
+    const QString logFilePath = BotLogger::getCurrentLogFilePath();
+
+    auto logFile = std::make_shared<QFile>(logFilePath);
+
+    if (!logFile->exists())
+    {
+        getLogger()->warn("Log file doesn't exist: {}", logFilePath);
+        sendMessage(chat_id, QString("Log file doesn't exist: %1").arg(QFileInfo(logFilePath).fileName()));
+
+        return false;
+    }
+
+    if (!logFile->open(QIODevice::ReadOnly))
+    {
+        getLogger()->warn("Failed to open log file: {}", logFilePath);
+        sendMessage(chat_id, "Failed to open log file.");
+
+        return false;
+    }
+
+    _bot->sendChatAction(chat_id, Bot::ChatActionType::UPLOAD_DOCUMENT);
+
+    Telegram::Message logMessage = _bot->sendDocument({
+        .chat_id = chat_id,
+        .document = logFile.get(),
+        .caption = QString("Current log file")
+        }).get();
+
+    const bool success = (logMessage.isEmpty() == false);
+
+    if (!success)
+    {
+        getLogger()->warn("Failed to send log file");
+    }
+
+    return success;
 }

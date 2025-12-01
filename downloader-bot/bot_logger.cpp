@@ -65,3 +65,15 @@ std::shared_ptr<spdlog::logger> BotLogger::create()
 
     return _logger;
 }
+
+QString BotLogger::getCurrentLogFilePath()
+{
+    QString logFilePath = BotConfig::path();
+    logFilePath += QDir::separator();
+    logFilePath += "logs";
+    logFilePath += QDir::separator();
+    logFilePath += QDate::currentDate().toString("yyyy-MM-dd");
+    logFilePath += ".txt";
+
+    return logFilePath;
+}

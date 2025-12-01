@@ -64,6 +64,8 @@ protected:
     bool sendPhoto(const qint64& chat_id, const QString& file, const QString &description);
     bool sendPhoto(const qint64& chat_id, const GalleryItem& file);
 
+    bool sendLogFile(const qint64& chat_id);
+
     bool sendGallery(const qint64& chat_id, const QList< GalleryItem>& files, const QString& url);
 
     void deleteMessage(const qint64& chat_id, const qint32& message_id);
