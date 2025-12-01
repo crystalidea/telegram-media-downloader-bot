@@ -1,6 +1,6 @@
 # Telegram Media Downloader Bot (beta)
 
-Supports downloading from Instagram (Reels and Posts), Youtube, Twitter and Threads. You can add more from [yt-dlp](https://github.com/yt-dlp/yt-dlp) and [gallery-dl](https://github.com/mikf/gallery-dl) but it will require modifying the source code (appriciated).
+Supports downloading from Instagram (Reels and Posts), Youtube, Facebook share links (``facebook.com/share/v/...``), Twitter and Threads. You can add more from [yt-dlp](https://github.com/yt-dlp/yt-dlp) and [gallery-dl](https://github.com/mikf/gallery-dl) but it will require modifying the source code (appriciated).
 
 # Running the bot
 

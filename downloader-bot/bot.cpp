@@ -61,7 +61,7 @@ void QTelegramDownloaderBot::setAvailableCommands()
 
 QString QTelegramDownloaderBot::getStartText() const
 {
-    return "This bot can be used to download Instagram posts/reels, Youtube videos/shorts or Twitter videos. "
+    return "This bot can be used to download Instagram posts/reels, Youtube videos/shorts, Facebook share links or Twitter videos. "
         "Send me a link to test but keep in mind I'm currently in a very early beta.";
 }
 

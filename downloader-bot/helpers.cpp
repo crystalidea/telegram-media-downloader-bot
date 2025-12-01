@@ -66,6 +66,8 @@ UrlType Helpers::getUrlType(const QString& url)
         return UrlType::Twitter;
     else if (url.contains("threads.net") || url.contains("threads.com"))
         return UrlType::Threads;
+    else if (url.contains("facebook.com") && url.contains("/share/v/"))
+        return UrlType::Facebook;
 
     return UrlType::Unknown;
 }
