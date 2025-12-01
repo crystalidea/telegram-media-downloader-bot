@@ -4,6 +4,7 @@
 #include "video_downloader.h"
 #include "bot_config.h"
 #include "gallery_downloader.h"
+#include "bot_version.h"
 
 #include <chrono>
 
@@ -50,8 +51,10 @@ QString BotStatus::getDownloadsString() const
 
 QString BotStatus::print() const
 {
-    QString status;
+    QString status = "```Status\n";
 
+    status += QString("Version: ") + BOT_VERSION_STR;
+    status += "\n";
     status += getUptimeString();
     status += "\n";
     status += getDownloadsString();
@@ -62,6 +65,8 @@ QString BotStatus::print() const
     status += "\n";
     status += QString("gallery-dl: ") + QGalleryDownloader::galleryVersion();
 
+    status += "```";
+    
     return status;
 }
 

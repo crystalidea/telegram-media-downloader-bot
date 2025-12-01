@@ -342,7 +342,7 @@ void QTelegramDownloaderBot::pollingThread()
                     if (text == "/status")
                     {
                         if (sendChatMessage)
-                            sendMessage(chat_id, _status.print());
+                            sendMessage(chat_id, _status.print(), false, true);
                     }
                     else if (text == "/start")
                     {
