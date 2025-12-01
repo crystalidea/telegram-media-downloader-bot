@@ -4,6 +4,7 @@
 #include "gallery_downloader.h"
 #include "helpers.h"
 #include "bot_logger.h"
+#include "ffmpeg.h"
 
 #include <iostream>
 
@@ -208,24 +209,50 @@ void QTelegramDownloaderBot::download_thread(const QString &url, qint64 chat_id,
 
                     if (fileSize > maxTelegramBotFileSizeBytes)
                     {
-                        sendMessage(chat_id, fmt::format("Error: the file is over 50MB ({})", fileSizeFormatted));
+                        sendMessage(chat_id, fmt::format("The file is over 50MB ({}). Re-encoding to fit the limit...", fileSizeFormatted));
 
-                        getLogger()->warn(fmt::format("Error: the file is over 50MB ({})", fileSizeFormatted));
-                    }
-                    else
-                    {
-                        getLogger()->info("Uploading...");
+                        getLogger()->warn("File is over 50MB ({}). Attempting to transcode.", fileSizeFormatted);
 
-                        if (sendVideo(chat_id, downloadedItem))
+                        auto compressedItem = ffmpeg::transcodeVideoToLimit(downloadedItem, maxTelegramBotFileSizeBytes, getLogger());
+
+                        if (compressedItem.has_value())
                         {
-                            getLogger()->info("Done");
+                            downloadedItem = compressedItem.value();
+                            fileSize = QFile(downloadedItem.videoFilePath).size();
+                            fileSizeFormatted = Helpers::formatSize(fileSize);
+
+                            getLogger()->info("Compressed file size: {}", fileSizeFormatted);
+                        }
+                        else
+                        {
+                            sendMessage(chat_id, fmt::format("Error: failed to re-encode the video under 50MB ({}).", fileSizeFormatted));
+
+                            getLogger()->warn("Failed to transcode video to fit 50MB limit ({}).", fileSizeFormatted);
+
+                            continue;
                         }
 
-                        // delete the original message
-                        // we'll save the url in the description
+                        if (fileSize > maxTelegramBotFileSizeBytes)
+                        {
+                            sendMessage(chat_id, fmt::format("Error: the file is over 50MB even after compression ({})", fileSizeFormatted));
 
-                        deleteMessage(chat_id, originalMessageID); 
+                            getLogger()->warn(fmt::format("Error: the file is over 50MB even after compression ({})", fileSizeFormatted));
+
+                            continue;
+                        }
                     }
+                    
+                    getLogger()->info("Uploading...");
+
+                    if (sendVideo(chat_id, downloadedItem))
+                    {
+                        getLogger()->info("Done");
+                    }
+
+                    // delete the original message
+                    // we'll save the url in the description
+
+                    deleteMessage(chat_id, originalMessageID);
                 }
             }
             else

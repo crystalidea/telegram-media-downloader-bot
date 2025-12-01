@@ -147,6 +147,7 @@
     <ClCompile Include="bot_logger.cpp" />
     <ClCompile Include="bot_status.cpp" />
     <ClCompile Include="bot.cpp" />
+    <ClCompile Include="ffmpeg.cpp" />
     <ClCompile Include="gallery_downloader.cpp" />
     <ClCompile Include="helpers.cpp" />
     <ClCompile Include="video_downloader.cpp" />
@@ -163,6 +164,7 @@
     <ClInclude Include="bot_config.h" />
     <ClInclude Include="bot_logger.h" />
     <ClInclude Include="bot_status.h" />
+    <ClInclude Include="ffmpeg.h" />
     <ClInclude Include="gallery_downloader.h" />
     <ClInclude Include="helpers.h" />
     <ClInclude Include="stream_info.h" />

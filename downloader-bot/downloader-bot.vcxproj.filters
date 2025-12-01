@@ -67,6 +67,9 @@
     <ClCompile Include="bot_logger.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="ffmpeg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h">
@@ -100,6 +103,9 @@
       <Filter>Source Files</Filter>
     </ClInclude>
     <ClInclude Include="bot_logger.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ffmpeg.h">
       <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>
