@@ -680,7 +680,11 @@ bool QTelegramDownloaderBot::sendGallery(const qint64& chat_id, const QList< Gal
             }
         }
         else
+        {
             delete myFile;
+
+            _logger->warn("Failed to open file {}", oneFile.getFile());
+        }
 
         if (nNumberOfFiles >= 10)
         {

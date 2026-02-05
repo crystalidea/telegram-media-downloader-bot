@@ -18,14 +18,18 @@ QGalleryDownloader::QGalleryDownloader(QObject* parent /*= nullptr*/)
 
 QGalleryDownloader::~QGalleryDownloader()
 {
-    
+    qDeleteAll(tempDirs);
+
+    tempDirs.clear();
 }
 
 bool QGalleryDownloader::downloadUrl(const QString& url, GalleryInfo& gi, spdlogger logger)
 {
-    QTemporaryDir dir;
+    tempDirs.append(new QTemporaryDir());
 
-    QString tempPath = QDir::toNativeSeparators(dir.path());
+    QTemporaryDir *dir = tempDirs.back();
+
+    QString tempPath = QDir::toNativeSeparators(dir->path());
 
     QStringList args;
 

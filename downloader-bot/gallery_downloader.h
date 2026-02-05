@@ -91,11 +91,11 @@ public:
 
     static QString galleryVersion();
 
-protected:
-
 private:
 
     static QString _version;
 
     QString _cookiesFile; // required for instagram
+
+    QList<QTemporaryDir *> tempDirs;
 };
