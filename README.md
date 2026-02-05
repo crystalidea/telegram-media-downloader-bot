@@ -1,6 +1,6 @@
 # Telegram Media Downloader Bot (beta)
 
-Supports downloading from Instagram (Reels and Posts), Youtube, Facebook share links (``facebook.com/share/v/...``), Twitter and Threads. You can add more from [yt-dlp](https://github.com/yt-dlp/yt-dlp) and [gallery-dl](https://github.com/mikf/gallery-dl) but it will require modifying the source code (appriciated).
+Supports downloading from Instagram (Reels and Posts), Youtube, Facebook share links (``facebook.com/share/v/...``) and Twitter(X). You can add more from [yt-dlp](https://github.com/yt-dlp/yt-dlp) and [gallery-dl](https://github.com/mikf/gallery-dl) but it will require modifying the source code (appriciated).
 
 # Running the bot
 
@@ -22,7 +22,7 @@ The bot itself is written in **C++/Qt**, can be built with cmake, for convenienc
 The bot Docker container basically uses Ubuntu 24.04 with all build tools required to build the bot and yt-dlp. When starting the container, it downloads this repository, and runs *_build.sh* script, which in its turn does the following:
 
 - builds the bot
-- downloads yt-dlp source code and applies meta Threads support from a [pull request](https://github.com/yt-dlp/yt-dlp/pull/13512) (not currently merged).
+- downloads yt-dlp binary
 - downloads gallery-dl binary
 - starts the bot
 
